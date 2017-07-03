@@ -33,14 +33,12 @@ configurations {
 dependencies {
     compile('org.springframework.boot:spring-boot-autoconfigure')
     compile('org.springframework.boot:spring-boot-starter-aop')
-
+//    compile('com.amazonaws:aws-java-sdk')
     compile('org.springframework.boot:spring-boot-starter-jersey')
+    compile('org.springframework.cloud:spring-cloud-aws-context')
+    compile('org.springframework.cloud:spring-cloud-aws-autoconfigure')
     compile('org.springframework.boot:spring-boot-starter-web')
-    compile group: 'commons-io', name: 'commons-io', version: '2.5'
-    compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
     compile('org.springframework.boot:spring-boot-starter-tomcat')
-    compile group: 'com.google.guava', name: 'guava', version: '20.0'
-
     compile("org.springframework.boot:spring-boot-configuration-processor")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
