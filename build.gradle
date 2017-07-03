@@ -1,0 +1,46 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.4.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: 'spring-boot'
+
+bootRepackage {
+    executable = true
+}
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	providedRuntime
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-autoconfigure')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+
+    compile('org.springframework.boot:spring-boot-starter-jersey')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+    compile('org.springframework.boot:spring-boot-starter-tomcat')
+    compile group: 'com.google.guava', name: 'guava', version: '20.0'
+
+    compile("org.springframework.boot:spring-boot-configuration-processor")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
