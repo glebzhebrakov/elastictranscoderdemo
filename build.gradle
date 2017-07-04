@@ -33,12 +33,18 @@ configurations {
 dependencies {
     compile('org.springframework.boot:spring-boot-autoconfigure')
     compile('org.springframework.boot:spring-boot-starter-aop')
-//    compile('com.amazonaws:aws-java-sdk')
+    compile('com.amazonaws:aws-java-sdk')
     compile('org.springframework.boot:spring-boot-starter-jersey')
     compile('org.springframework.cloud:spring-cloud-aws-context')
     compile('org.springframework.cloud:spring-cloud-aws-autoconfigure')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-tomcat')
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.158'
+    compile group: 'com.google.guava', name: 'guava', version: '22.0'
+
     compile("org.springframework.boot:spring-boot-configuration-processor")
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-elastictranscoder', version: '1.11.158'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version: '1.11.158'
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

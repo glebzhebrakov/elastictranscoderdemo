@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 
 //@SpringCloudAutoConfigure
 @SpringBootApplication
-@EnableContextInstanceData
 @EnableAutoConfiguration
 public class ElastictranscoderdemoApplication {
 
