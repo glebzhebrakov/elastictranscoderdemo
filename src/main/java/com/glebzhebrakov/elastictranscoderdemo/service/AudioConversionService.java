@@ -50,9 +50,6 @@ public class AudioConversionService {
     // http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/sample-code.html#java-pipeline
     private static final String PIPELINE_ID = "1499175362963-8gfez2";
 
-    // All outputs will have this prefix prepended to their output key.
-    private static final String OUTPUT_KEY_PREFIX = "elastic-transcoder-samples/output/";
-
     private static final String INPUT_BUCKET_NAME = "insnds";
 
     private static final String OUTPUT_BUCKET_NAME = "outsnds";
@@ -99,7 +96,6 @@ public class AudioConversionService {
             final File f = new File(tempDir.getAbsolutePath() + "/" + uploadedFileKey );
 
             java.nio.file.Files.copy( new ByteArrayInputStream(audio), f.toPath(), StandardCopyOption.REPLACE_EXISTING );
-//            s3client.putObject(new PutObjectRequest(INPUT_BUCKET_NAME, INPUT_KEY, new File("/home/gzhebrakov/Desktop/e7a3010c-3756-4dca-8989-529854961711.wav")));
             convert(uploadedFileKey, tempDir);
         } catch (Exception e) {
             e.printStackTrace();
